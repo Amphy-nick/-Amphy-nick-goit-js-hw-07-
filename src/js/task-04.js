@@ -4,38 +4,36 @@
 // Создай функции increment и decrement для увеличения и уменьшения значения счетчика
 // Добавь слушатели кликов на кнопки, вызовы функций и обновление интерфейса
 
-const refs = {
-    btnDecrement: document.querySelector('button[data-action="decrement"]'),
-    btnIncrement: document.querySelector('button[data-action="increment"]'),
-    valueEl: document.querySelector('#value')
 
-}
+const refs = {
+    decrementBtn: document.querySelector('button[data-action="decrement"]'),
+    incrementBtn: document.querySelector('button[data-action="increment"]'),
+    valueEl: document.querySelector('#value'),
+};
 
 const counterValue = {
     value: 0,
-
     Decrement() {
-
-    console.log('это клик по декременту')
         this.value -= 1
+        console.log('Это клик по декременту ')
+
     },
-
     Increment() {
-    console.log('это клик по инкременту')
-    this.value += 1
-    }
-}
+        this.value += 1
+        console.log('Это клик по инкременту ')
 
+    }
+};
 
 function buttonDecrementClick() {
     counterValue.Decrement()
-    refs.valueEl.textContent = counterValue.value
+    refs.valueEl.textContent = counterValue.value;
 }
 
 function buttonIncrementClick() {
-counterValue.Increment()
-    refs.valueEl.textContent = counterValue.value
+    counterValue.Increment()
+    refs.valueEl.textContent = counterValue.value;
 }
 
-refs.btnDecrement.addEventListener('click', buttonDecrementClick)
-refs.btnIncrement.addEventListener('click', buttonIncrementClick)
+refs.decrementBtn.addEventListener('click', buttonDecrementClick);
+refs.incrementBtn.addEventListener('click', buttonIncrementClick);

@@ -10,15 +10,12 @@
 // Если введено подходящее количество, то border инпута становится зеленым, если неправильное - красным.
 // Для добавления стилей, используй CSS-классы valid и invalid.
 
-const inputEl = document.querySelector('#validation-input')
-const checkChange = inputEl.addEventListener('blur', onInputChange)
+const inputEl = document.querySelector('#validation-input');
+const checkValidation = inputEl.addEventListener('blur', onInputCheck);
 
-
-function onInputChange(event) {
-
+function onInputCheck(event) {
     if (event.currentTarget.value.length === Number(inputEl.dataset.length)) {
         inputEl.classList.add('valid'), inputEl.classList.remove('invalid')
-
-    } else {
-        inputEl.classList.add('invalid'), inputEl.classList.remove('valid') }
+    }
+    else { inputEl.classList.add('invalid'), inputEl.classList.remove('valid') }
 }
